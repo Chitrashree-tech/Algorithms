@@ -1,0 +1,29 @@
+Bit Manipulation 
+
+4 Manipulation 
+
+Get Bit : getting the bit at the given position. if its zero it returns zero else it return one 
+Code :
+int getbit(int n, int pos){
+  return (n&(1<<pos))!=0
+}
+
+Set Bit : setting 1 at given position. 
+Code : 
+int setbit(int n, int pos){
+  return (n|(1<<pos))
+}
+
+Clear Bit(Unset Bit) : clearing the bit at the position (if the bit is 1 then clear it to 0)
+Code : 
+int clearbit(int n, int pos){
+  int mask=~(1<<pos)
+  return (mask & n)
+}
+
+Update Bit : update the given bit at a given position with the given bit
+Code : 
+int updateBit(int n, int pos, int value) {
+    n = ~(1 << pos) & n
+    return n | (value << pos)
+}
