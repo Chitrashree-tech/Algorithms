@@ -1,0 +1,18 @@
+Sieve Of Eratosthenes : this algorithm prints prime nos from the given range by cancelling the multiples of each nos and considering the unmarked ones 
+void prime(int n){
+  int prime[100]={0};
+  for (int p = 2; p * p <= n; p++) {
+        if (prime[p]==0) {
+            for (int i = p * p; i <= n; i += p) {
+                prime[i] = 1;
+            }
+        }
+    }
+
+    for (int p = 2; p <= n; p++) {
+        if (prime[p]==0) {
+            cout << p << " ";
+        }
+    }
+    cout << endl;
+}
